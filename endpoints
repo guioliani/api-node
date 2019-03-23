@@ -1,0 +1,14 @@
+|______________________________________________________|
+|                                                      |
+|                                                      |
+|            endpoints da aplicação                    |
+|                                                      |
+|______________________________________________________|
+
+endpoint default "status da api" = url.com.br/ ("/")
+endpoint getBySlug url.com.br/products/mouse-gamer ("/products/slugValue")
+endpoint getById url.com.br/products/admin/5c964e74b1550913987d8ae3 ("/products/admin/idNumber")
+endpoint getByTag url.com.br/products/tags/games ("/products/tags/tagName")
+endpoint put url.com.br/products/5c964e74b1550913987d8ae3 ("/products/idProduto")
+endpoint post url.com.br/products ("/products")
+endpoint delete url.com.br/products ("/products") ("passar o id no body")

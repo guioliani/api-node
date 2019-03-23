@@ -2,21 +2,14 @@
 
 const express = require('express');
 const router = express.Router();
+const controller = require('../controllers/productController');
 
-router.post('/', (req, res, next) => {
-    res.status(201).send(req.body);
-});
-
-router.put('/:id', (req, res, next) => {
-    const id = req.params.id;//recupera parametro url
-    res.status(201).send({ 
-        id: id, 
-        item: req.body 
-    });
-});
-
-router.delete('/', (req, res, next) => {
-    res.status(200).send(req.body);
-});
+router.get('/', controller.get);
+router.get('/:slug', controller.getBySlug);
+router.get('/admin/:id', controller.getById);
+router.get('/tags/:tag', controller.getByTag);
+router.post('/', controller.post);
+router.put('/:id', controller.put);
+router.delete('/', controller.delete);
 
 module.exports = router;
